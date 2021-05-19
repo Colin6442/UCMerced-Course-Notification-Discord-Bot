@@ -22,14 +22,14 @@ def crnToSub(crn, arr):
 
 def readRequests():
     back = []
-    for x in readFile("requests.txt"):
+    for x in readFile("/home/pi/Desktop/BetterBot/requests.txt"):
         back.append(x[:-1])
     return back
 
 
 def readRequestsArr():
     back = []
-    for x in readFile("requests.txt"):
+    for x in readFile("/home/pi/Desktop/BetterBot/requests.txt"):
         fix = x[:-1].split(",")
         back.append(fix)
     return back
@@ -38,16 +38,16 @@ def readRequestsArr():
 def appendRequests(crn, arr, channel):
     add = crnToSub(crn, arr)
     add.append(str(channel))
-    appendFile("requests.txt", add[0] + "," + add[1] + "," + crn + "," + add[2] + "," + str(channel) + "\n")
+    appendFile("/home/pi/Desktop/BetterBot/requests.txt", add[0] + "," + add[1] + "," + crn + "," + add[2] + "," + str(channel) + "\n")
 
 
 def removeRequests(crn):
-    keep = readFile("requests.txt")
-    writeFile("requests.txt", "")
+    keep = readFile("/home/pi/Desktop/BetterBot/requests.txt")
+    writeFile("/home/pi/Desktop/BetterBot/requests.txt", "")
     for x in keep:
         oldCrn = x.split(",")[2]
         if oldCrn != crn:
-            appendFile("requests.txt", x)
+            appendFile("/home/pi/Desktop/BetterBot/requests.txt", x)
 
 
 def readFile(file):

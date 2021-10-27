@@ -11,7 +11,7 @@ while True:
     try:
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
-        test = open("/home/pi/Desktop/BetterBot/webTest.txt", "w")
+        test = open("webTest.txt", "w")
         test.write(current_time)
         '''''''''''''''''
         SELENIUM
@@ -31,9 +31,9 @@ while True:
         html = driver.page_source
         newHTML = ''
         driver.close()
-        clear = open("/home/pi/Desktop/BetterBot/html.txt", "w")
+        clear = open("html.txt", "w")
         clear.write("")
-        thing = open("/home/pi/Desktop/BetterBot/html.txt", "a")
+        thing = open("html.txt", "a")
         for x in html:
             thing.write(x)
         '''''''''''''''''
@@ -54,9 +54,9 @@ while True:
             if (newHTML.find("#FFC605") - 85 >= 0):
                 newHTML = newHTML[0: newHTML.find("#FFC605") - 85] + newHTML[newHTML.find("#FFC605") - 85 + len(category) + 66: len(newHTML)]
 
-        clear = open("/home/pi/Desktop/BetterBot/newhtml.txt", "w")
+        clear = open("newhtml.txt", "w")
         clear.write("")
-        thing = open("/home/pi/Desktop/BetterBot/newhtml.txt", "a")
+        thing = open("newhtml.txt", "a")
         for x in newHTML:
             thing.write(x)
 
@@ -107,18 +107,18 @@ while True:
                 arr[3].append(0)
                 arr[3].append(0)
 
-        resetOld = open("/home/pi/Desktop/BetterBot/oldMasterCourses.txt", "w")
+        resetOld = open("oldMasterCourses.txt", "w")
         resetOld.write("")
         resetOld.close()
-        old = open("/home/pi/Desktop/BetterBot/oldMasterCourses.txt", "a")
-        oldMaster = open("/home/pi/Desktop/BetterBot/masterCourses.txt", "r")
+        old = open("oldMasterCourses.txt", "a")
+        oldMaster = open("masterCourses.txt", "r")
         for x in oldMaster:
             old.write(x)
         old.close()
-        resetMaster = open("/home/pi/Desktop/BetterBot/masterCourses.txt", "w+")
+        resetMaster = open("masterCourses.txt", "w+")
         resetMaster.write("")
         resetMaster.close()
-        master = open("/home/pi/Desktop/BetterBot/masterCourses.txt", "a")
+        master = open("masterCourses.txt", "a")
         for x in arr:
             master.write("!")
             for y in x:
@@ -126,10 +126,10 @@ while True:
                 master.write("\n")
         master.close()
 
-        arr = getArr("/home/pi/Desktop/BetterBot/masterCourses.txt")
-        old = getArr("/home/pi/Desktop/BetterBot/oldMasterCourses.txt")
+        arr = getArr("masterCourses.txt")
+        old = getArr("oldMasterCourses.txt")
         changed = []
-        #writeFile("/home/pi/Desktop/BetterBot/changes.txt", "")
+        #writeFile("changes.txt", "")
         update = []
 
         for i, x in enumerate(arr[3]):
@@ -139,10 +139,10 @@ while True:
         # debug
         for x in update:
             print(arr[0][x] + arr[1][x] + "(" + arr[2][x] + ")" +"  new: " + arr[3][x] + "  old: " + old[3][x])
-            appendFile("/home/pi/Desktop/BetterBot/allChanges.txt", (arr[0][x] + arr[1][x] + "(" + arr[2][x] + ")" +"  new: " + arr[3][x] + "  old: " + old[3][x] + "\n"))
+            appendFile("allChanges.txt", (arr[0][x] + arr[1][x] + "(" + arr[2][x] + ")" +"  new: " + arr[3][x] + "  old: " + old[3][x] + "\n"))
         if changed != []:
             for x in changed:
-                appendFile("/home/pi/Desktop/BetterBot/changes.txt", (x + "\n"))
+                appendFile("changes.txt", (x + "\n"))
 
         time.sleep(20)
     except:

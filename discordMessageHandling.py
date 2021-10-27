@@ -1,7 +1,7 @@
 import discord, time
 from func import *
 time.sleep(10)
-TOKEN = ("NTUyNzI5NDE2MDExMDg3ODc2.XH9fYQ.GgAW6L79gUeV2aGv-ZDj7GDldl8")
+TOKEN = ("token")
 client = discord.Client()
 
 
@@ -15,7 +15,7 @@ async def on_ready():
 async def on_message(message):
     switch()
     if message.author != client.user:
-        arr = getArr("/home/pi/Desktop/BetterBot/masterCourses.txt")
+        arr = getArr("masterCourses.txt")
         if message.content == "*info":
             await message.channel.send("```*crn \"number\"   \t\t\t\t\t\t\t Adds class to pings \n"
                                        "*check \"subject-number\" \t\t\t\t\t Checks if the class is available right now \n"

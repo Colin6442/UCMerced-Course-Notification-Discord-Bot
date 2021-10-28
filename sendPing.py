@@ -1,7 +1,7 @@
 import discord, time
 from func import *
 time.sleep(10)
-TOKEN = ("NTUyNzI5NDE2MDExMDg3ODc2.XH9fYQ.zt7vmOXBLluSbs3lWCDyD4xvCzc")
+TOKEN = ("token")
 client2 = discord.Client()
 
 @client2.event

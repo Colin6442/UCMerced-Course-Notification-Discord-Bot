@@ -1,18 +1,13 @@
 import time
-from datetime import datetime
 from selenium import webdriver
-from pyvirtualdisplay import Display
+#from pyvirtualdisplay import Display
 from func import *
-time.sleep(20)
 print("web on")
-DISPLAY = Display(visible=0, size=(800, 600))
-DISPLAY.start()
+#DISPLAY = Display(visible=0, size=(800, 600))
+#DISPLAY.start()
+time.sleep(2)
 while True:
     try:
-        now = datetime.now()
-        current_time = now.strftime("%H:%M:%S")
-        test = open("webTest.txt", "w")
-        test.write(current_time)
         '''''''''''''''''
         SELENIUM
         opens ucm course 
@@ -20,10 +15,10 @@ while True:
         source html
         '''''''''''''''''
         url = "https://mystudentrecord.ucmerced.edu/pls/PROD/xhwschedule.P_SelectSubject"
-        driver = webdriver.Chrome(executable_path="/usr/lib/chromium-browser/chromedriver")
+        driver = webdriver.Chrome(executable_path = "chromedriver.exe")
         #driver.set_window_position(-1000, -1000)
         driver.get(url)
-        springBtn = driver.find_elements_by_xpath("//input[@value='202130']")[0]
+        springBtn = driver.find_elements_by_xpath("//input[@value='202210']")[0]
         allCourses = driver.find_elements_by_xpath("//input[@value='N' and @name='openclasses']")[0]
         submit_button = driver.find_elements_by_xpath('/html/body/div[3]/form/input')[0]
         allCourses.click()

@@ -1,7 +1,7 @@
 import discord, time
 from func import *
 time.sleep(10)
-TOKEN = ("token")
+TOKEN = ("NTUyNzI5NDE2MDExMDg3ODc2.XH9fYQ.zt7vmOXBLluSbs3lWCDyD4xvCzc")
 client = discord.Client()
 
 
@@ -13,7 +13,6 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    switch()
     if message.author != client.user:
         arr = getArr("masterCourses.txt")
         if message.content == "*info":
@@ -128,7 +127,7 @@ async def on_message(message):
 
         if message.content[0:10] == "*channelID":
             await message.channel.send(message.channel.id)
-
+print("turning on")
 client.run(TOKEN)
 
 

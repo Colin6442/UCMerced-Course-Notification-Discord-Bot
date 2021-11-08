@@ -1,7 +1,7 @@
 import discord, time
 from func import *
 time.sleep(10)
-TOKEN = ("token")
+TOKEN = ("NTUyNzI5NDE2MDExMDg3ODc2.XH9fYQ.efRvXhmERxMB_dtqjvOmkjgUE58")
 client = discord.Client()
 
 

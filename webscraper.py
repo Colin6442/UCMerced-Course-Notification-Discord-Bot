@@ -2,7 +2,7 @@ import time
 from selenium import webdriver
 #from pyvirtualdisplay import Display
 from func import *
-print("web on")
+print("WebScraper On")
 #DISPLAY = Display(visible=0, size=(800, 600))
 #DISPLAY.start()
 time.sleep(2)

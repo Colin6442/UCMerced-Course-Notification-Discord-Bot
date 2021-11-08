@@ -1,4 +1,4 @@
-#List of all functions used by 
+#List of all functions used
 def getArr(fileName):
     arr = [[], [], [], []]
     current = -1
